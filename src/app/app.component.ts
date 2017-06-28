@@ -20,7 +20,7 @@ import { PageService } from "app/page.service";
           animate('0.2s ease', style({
             transform: 'translate(150px,25px)'
           })),
-          animate('0.5s 0.2s ease', style({
+          animate('0.5s 0.2s ease', style({ 
             opacity: 0
           }))
         ])
