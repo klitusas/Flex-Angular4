@@ -1,3 +1,7 @@
-<h1>
-  {{title}}
-</h1>
+<div class="ad-banner" style="background-color:#424242">
+  <div fxFlex ><button md-raised-button (click)="loadComponentBack()">Back</button></div>
+  <div ><button md-raised-button (click)="loadComponent()">Next</button></div>
+</div>
+<md-progress-bar mode="indeterminate" *ngIf="loading" color="yellow"></md-progress-bar>
+<ng-template page-host ></ng-template>
+
