@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { PageItem } from "app/page-item";
 import { DogsComponent } from "app/dogs-profile/dogs.component";
-import { CarsProfileComponent } from "app/cars-profile/cars-profile.component";
+import { PlayerComponent } from "app/player-profile/player.component";
 
-@Injectable()
 
 @Injectable()
 export class PageService {
@@ -22,9 +21,7 @@ export class PageService {
     ]
     return [
       new PageItem(DogsComponent, { data: this.dogs }),
-      new PageItem(DogsComponent, { name: 'Dr IQ', bio: 'Smart as they come' }),
-      new PageItem(CarsProfileComponent, { name: 'BMW', bio: 'Very fast - buy now', surname: 'fredrick', image: 'https://cache.bmwusa.com/cosy.arox?pov=walkaround&brand=WBBI&vehicle=17IC&client=byo&paint=P0C23&fabric=FNFCJ&sa=S02D6,S05A2,S07KX&angle=30&quality=100&resp=png&BKGND=TRANSPARENT&HEIGHT=18%&SHARP=100' }),
-      new PageItem(CarsProfileComponent, { name: 'Toyota', bio: 'Not so fast - up to you' }),
+      new PageItem(PlayerComponent, {})
     ];
   }
 }

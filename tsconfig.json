@@ -10,7 +10,8 @@
     "experimentalDecorators": true,
     "target": "es5",
     "types": [
-      "hammerjs"
+      "hammerjs",
+      "soundManager"
     ],
     "typeRoots": [
       "node_modules/@types"

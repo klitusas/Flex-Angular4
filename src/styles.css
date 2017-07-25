@@ -1,11 +1,208 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+/*Player*/
+
+.audio-player-wrapper {
+    width: 225px;
+    margin: 100px auto;
+    background-color: #ddddda;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.audio-player-image {
+    position: relative;
+    height: 149px;
+    -webkit-backface-visibility: hidden;
+}
+
+.audio-player-image>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.audio-player-image>img.fading {
+    -webkit-transition: opacity 200ms linear;
+    -moz-transition: opacity 200ms linear;
+    -o-transition: opacity 200ms linear;
+    transition: opacity 200ms linear;
+    z-index: 1;
+    opacity: 0;
+}
+
+@-moz-keyframes loadingStripes {
+    0% {
+        background-position: -20px;
+    }
+    100% {
+        background-position: 0px;
+    }
+}
+
+@-webkit-keyframes loadingStripes {
+    0% {
+        background-position: -20px;
+    }
+    100% {
+        background-position: 0px;
+    }
+}
+
+@-o-keyframes loadingStripes {
+    0% {
+        background-position: -20px;
+    }
+    100% {
+        background-position: 0px;
+    }
+}
+
+@-ms-keyframes loadingStripes {
+    0% {
+        background-position: -20px;
+    }
+    100% {
+        background-position: 0px;
+    }
+}
+
+@keyframes loadingStripes {
+    0% {
+        background-position: -20px;
+    }
+    100% {
+        background-position: 0px;
+    }
+}
+
+.audio-player-progress {
+    display: block;
+    width: 100%;
+    height: 5px;
+    border-radius: 25px;
+    background-color: #a0a7af;
+    overflow: hidden;
+}
+
+.audio-player-progress.loading {
+    background-image: -webkit-linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+    background-image: linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+    background-size: 20px 20px;
+    -webkit-animation: loadingStripes 700ms linear infinite;
+    -moz-animation: loadingStripes 700ms linear infinite;
+    -ms-animation: loadingStripes 700ms linear infinite;
+    -o-animation: loadingStripes 700ms linear infinite;
+    animation: loadingStripes 700ms linear infinite;
+}
+
+.audio-player-progress-bar {
+    -webkit-transition: width 200ms linear;
+    -moz-transition: width 200ms linear;
+    -o-transition: width 200ms linear;
+    transition: width 200ms linear;
+    display: block;
+    height: 100%;
+    width: 0;
+    max-width: 100%;
+    background-color: #808e97;
+    border-radius: 25px;
+}
+
+.audio-player-button {
+    display: block;
+    position: relative;
+    float: left;
+    width: 35px;
+    height: 35px;
+    margin: 0 5px;
+    border-radius: 55px;
+    border: 3px solid #808e97;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.audio-player-button:hover {
+    opacity: 1;
+}
+
+.audio-player-button::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -12px;
+    right: 0;
+    width: 0px;
+    height: 0px;
+    margin: auto;
+    line-height: 0;
+    font-size: 20px;
+    color: #808e97;
+}
+
+.audio-player-button.icon-pause::before {
+    font-size: 18px;
+    top: 1px;
+    left: -15px;
+}
+
+.audio-player-button.icon-backward::before {
+    left: -17px;
+}
+
+.audio-player-button.small {
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+}
+
+.audio-player-button.small::before {
+    font-size: 15px;
+}
+
+.audio-player-button-wrappers {
+    overflow: hidden;
+    *zoom: 1;
+    display: block;
+    width: 133px;
+    margin: 15px auto 0 auto;
+}
+.audio-player-wrapper.error .audio-player-image {
+  background: #f78471; }
+
+.audio-player-wrapper.error .audio-player-image:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 10px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  color: white;
+  content: "Error loading";
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 13px; }
+
+.audio-player-wrapper.error .audio-player-image > * {
+  display: none; }
+
 @import '~@angular/material/prebuilt-themes/purple-green.css';
+label {
+    color: #848484 !important;
+}
 
+.card-background-color {
+    background: red;
+}
 
-.hero-profile {
-    background-color: blue;
-    color: red;
+.mat-input-underline {
+    border-color: rgba(0, 0, 0, 0.12);
 }
 
 .car-profile {
@@ -13,15 +210,43 @@
     color: pink;
 }
 
+.mat-input-container {
+    display: inline-block;
+    position: relative;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    line-height: normal;
+    text-align: center;
+    width: 350px;
+}
+
+.example-full-width {
+    text-align: center
+}
+
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar.mat-warn {
+    background: #2196F3;
+    color: #fff;
+}
+
+.mat-input-underline .mat-input-ripple.mat-warn {
+    background-color: #2196F3;
+}
+
 
 /*.example-card {
     max-height: 400px;
 }*/
-.mat-list .mat-list-item .mat-list-item-content, .mat-nav-list .mat-list-item .mat-list-item-content {
+
+.mat-list .mat-list-item .mat-list-item-content,
+.mat-nav-list .mat-list-item .mat-list-item-content {
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     box-sizing: border-box;
     font-size: 16px;
     height: 48px;
@@ -31,8 +256,9 @@
 }
 
 .full-button {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
+
 .app-icon-button {
     box-shadow: none;
     -webkit-user-select: none;
@@ -54,6 +280,7 @@
     text-decoration: none;
     margin-top: 10px !important;
 }
+
 .card-block {
     padding: 0 !important;
 }
@@ -149,11 +376,12 @@
     color: #fff !important;
     background-color: #424242;
 }
+
 .mat-fab,
 .mat-mini-fab {
     background-color: #eeeeee;
-    color: rgba(0,0,0,0.54);
-    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    color: rgba(0, 0, 0, 0.54);
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
 }
 
 .mat-mini-fab {
@@ -178,14 +406,16 @@
 /*bottom: 20px;
     display: initial;
 }*/
+
 .mat-toolbar.mat-primary {
     background: #212121;
-    color: rgba(255,255,255,.87);
+    color: rgba(255, 255, 255, .87);
     /* text-align: center; */
 }
+
 .mat-sidenav {
     position: relative;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
     display: block;
     position: absolute;
     top: 0;
@@ -196,8 +426,9 @@
     box-sizing: border-box;
     height: 100%;
     overflow-y: auto;
-    transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%, 0, 0);
 }
+
 .mat-card-actions {
     margin-left: 0;
     margin-right: -16px;
